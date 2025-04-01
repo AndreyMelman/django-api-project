@@ -24,7 +24,7 @@ class Dog(models.Model):
     favorite_toy = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name and f"({self.breed.name})"
+        return self.name
 
 
 class Breed(models.Model):
