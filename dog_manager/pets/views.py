@@ -5,6 +5,17 @@ from django.db.models import Avg, Count, OuterRef, Subquery
 
 
 class DogViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet для работы с собаками через API.
+
+    Endpoints:
+    - GET /api/dogs/ - список собак
+    - POST /api/dogs/ - создание собаки
+    - GET /api/dogs/{id}/ - детали собаки
+    - PUT/PATCH /api/dogs/{id}/ - обновление собаки
+    - DELETE /api/dogs/{id}/ - удаление собаки
+    """
+
     queryset = Dog.objects.all()
     serializer_class = DogListSerializer
     detail_serializer_class = DogDetailSerializer
@@ -37,6 +48,17 @@ class DogViewSet(viewsets.ModelViewSet):
 
 
 class BreedViewSet(viewsets.ModelViewSet):
+    """
+    ViewSet для работы с породами через API.
+
+    Endpoints:
+    - GET /api/breeds/ - список пород
+    - POST /api/breeds/ - создание породы
+    - GET /api/breeds/{id}/ - детали породы
+    - PUT/PATCH /api/breeds/{id}/ - обновление породы
+    - DELETE /api/breeds/{id}/ - удаление породы
+    """
+
     queryset = Breed.objects.all()
     serializer_class = BreedSerializer
 
